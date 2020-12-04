@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2692376274860607003}
   - component: {fileID: 6936184414096388959}
   - component: {fileID: 4622260970412455942}
+  - component: {fileID: 7751784829244328834}
   m_Layer: 0
   m_Name: Nodouble_enemySpeed
   m_TagString: Untagged
@@ -154,3 +155,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7751784829244328834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692376274860607000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f689be2c3df9b4db44d1e9f505491b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 8

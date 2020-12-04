@@ -10,7 +10,7 @@ public class NewItem : MonoBehaviour {
     public float hpMax = 100f;
     public float hp = 100f;
     public GameObject self;
-    private Vector3 newPos1, newPos2;
+   
 
     private bool alive;
     public bool canDouble;
@@ -33,7 +33,6 @@ public class NewItem : MonoBehaviour {
         if (hp <= 0 && alive) {
             alive = false;
             hp = 0;
-            Debug.Log("debug");
             Spawner();
             Destroy(gameObject);
         }
@@ -47,7 +46,7 @@ public class NewItem : MonoBehaviour {
 
         velocity *= Mathf.Pow(1f - drag, Time.fixedDeltaTime);
 
-        // test de la durée de vie (auto-suicide si trop vieux)
+        // test de la durï¿½e de vie (auto-suicide si trop vieux)
         if (time > timeMax) {
             Destroy(gameObject);
         }
@@ -62,8 +61,8 @@ public class NewItem : MonoBehaviour {
         
         if (canDouble)
         {
-            newPos1 = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z);
-            newPos2 = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z);
+            Vector3 newPos1 = new Vector3(transform.position.x + 0.8f, transform.position.y, transform.position.z);
+            Vector3 newPos2 = new Vector3(transform.position.x - 0.8f, transform.position.y, transform.position.z);
             Instantiate(self, newPos1, transform.rotation);
             Instantiate(self, newPos2, transform.rotation);
         }
@@ -72,7 +71,7 @@ public class NewItem : MonoBehaviour {
 
 #if UNITY_EDITOR
     void OnValidate() {
-        // élégant à l'usage, mais compliqué à écrire : dans l'inspecteur, empêcher "hp" d'être supérieur à "hpMax"
+        // ï¿½lï¿½gant ï¿½ l'usage, mais compliquï¿½ ï¿½ ï¿½crire : dans l'inspecteur, empï¿½cher "hp" d'ï¿½tre supï¿½rieur ï¿½ "hpMax"
         System.Func<System.Threading.Tasks.Task> CheckHp = async () => {
             await System.Threading.Tasks.Task.Delay(400);
             if (hp > hpMax) {

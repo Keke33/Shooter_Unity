@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -36,7 +38,10 @@ public class Player : MonoBehaviour {
 
         if (hp == 0) {
             // gameover
-            Debug.Break();
+            SceneManager.LoadScene("Game_Over");
+            Debug.Log("GameOver");
+
+            
         } else {
             StartCoroutine(Respawn());
         }
